@@ -1,0 +1,108 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Madrid Atocha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Reset CSS-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Roboto" rel="stylesheet">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <!--BOOTSTRAP JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!--JS FILE-->
+    <script src="assets/javascript/main.js"></script>
+
+</head>
+
+<body>
+    <!--TOP - HEADER-->
+    <div class="container-fluid">
+        <div class="container top align-items-center ">
+            <div class="row align-items-center">
+                <div class="col-3 align-items-center title">
+                    <img src="assets/images/Logo.png" class="logo">
+                </div>
+                <div class="col-9 align-items-center title">
+                    <h2 id="title2">Train Schedule - Madrid Atocha</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--TREN SCHEDULE-->
+    <div class="container main">
+        <div class="schedule">
+            <h3 class="schTitle">Current Train Schedule</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="Train Name">Train name</th>
+                        <th scope="Destination">Destination</th>
+                        <th scope="Frecuency (in min)">Frecuency</th>
+                        <th scope="Next Arrival">Next Arrival</th>
+                        <th scope="Minutes Away">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>La Zarzuela</td>
+                        <td>Seville</td>
+                        <td>60</td>
+                        <td>08:00 AM</td>
+                        <td>0050</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="schedule">
+            <div>
+                <h3 class="schTitle">Add Train</h3>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="trainName">Train name</label>
+                    <input type="text" class="form-control" id="trainName" placeholder="Train Name">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="Destination">
+                </div>
+                <div class="form-group">
+                    <label for="firstArrival">First Arrival (Military Time)</label>
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <input type="number" class="form-control" id="firstArrHH" placeholder="12" min=0 max=12> </div>
+
+                        <div class="col-md-auto">
+                            <span> : </span>
+                        </div>
+                        <div class="col-md-auto">
+                            <input type="number" class="form-control " id="firstArrMM" placeholder="00" min=00 max=59>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="frecuency">Frecuency (in min) </label>
+                    <input type="number" class="form-control" id="frecuency" placeholder="Frecuency">
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

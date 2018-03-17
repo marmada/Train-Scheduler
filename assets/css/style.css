@@ -1,0 +1,59 @@
+.logo{
+    width: 100px;
+    margin-left:25px;
+    border-width: 2px;
+    border-style:solid;
+    border-color: white;
+}
+
+.top{
+    background-image: url(../images/Madrid-Top.png);
+    height: 200px;
+    color: white;
+ 
+}
+
+
+.title{
+    margin-top: 80px;
+}
+
+#title2{
+    
+    width: 750px;
+    height: 78px;
+    padding:20px 10px 10px 10px;
+    background-color:#D04548;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    font-weight: 800px;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+}
+
+
+
+.schedule{
+    border-style: solid;
+    border-color: #D04548;
+    border-width: 2px;
+    border-radius: 5px;
+    margin-top:40px;
+}
+
+.schTitle{
+    color: white;
+    background-color: #D04548;
+    font-family: 'Righteous', cursive;
+    padding:10px;
+    margin-block-end: 0px;
+}
+
+form{
+    margin-left:25px;
+    margin-right:25px;
+    font-family: 'Roboto', sans-serif;
+}
+
