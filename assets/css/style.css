@@ -76,3 +76,11 @@ label{
     border-color: #D04548;
     font-family: 'Roboto', sans-serif;
 }
+
+#clock{
+   margin-left: auto;
+   margin-right:auto;
+   margin-top: 25px;
+   align-self: center;
+
+}

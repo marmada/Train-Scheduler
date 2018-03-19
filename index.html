@@ -24,7 +24,7 @@
     <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <!--JS FILE-->
-    <script src="assets/javascript/main.js"></script>
+
 
 </head>
 
@@ -39,6 +39,14 @@
                 <div class="col-9 align-items-center title">
                     <h2 id="title2">Train Schedule - Madrid Atocha</h2>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="clock">
+            
+                <iframe src="http://free.timeanddate.com/clock/i65rk629/n141/szw110/szh110/hoc34495e/hfcd04548/cf100/hgr0/hwc34495e/hcc34495e/hcw3/hcd54/fas22/facfdf2e9/fdi70/mqc34495e/mhc34495e/mmc34495e/hwm1/hhc34495e/hmc34495e/hscfdf2e9/hsw3" frameborder="0" width="110" height="110"></iframe>
+
             </div>
         </div>
     </div>
@@ -63,7 +71,7 @@
                         <td>Seville</td>
                         <td>60</td>
                         <td>08:00 AM</td>
-                        <td>0050</td>
+                        <td>50</td>
                     </tr>
                 </tbody>
             </table>
@@ -99,10 +107,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="firstArrival">First Arrival (Military Time  i.e 0600 for 6:00AM)</label>
+                    <label for="firstArrival">First Arrival (Military Time i.e 0600 for 6:00AM)</label>
                     <div class="row">
                         <div class="col-md-auto">
-                            <input type="time" class="form-control" id="firstArr" placeholder="12:00"></div>
+                            <input type="time" class="form-control" id="firstArr" placeholder="12:00">
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -115,6 +124,13 @@
         </div>
 
     </div>
+
+    <script src="assets/javascript/main.js"></script>
+
+
+
+    <!-- Link to Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </body>
 
 </html>
