@@ -41,89 +41,89 @@
                 </div>
             </div>
         </div>
-    <!--TREN SCHEDULE-->
-    <div class="container main">
-        <div><iframe src="http://free.timeanddate.com/clock/i65rla52/n3946/fn2/fcfff/tcd04548/bac34495e/pa9/ts1/ta1" frameborder="0" width="173" height="39"></iframe>
-        </div>
-        <div class="schedule">
-            <h3 class="schTitle">Current Train Schedule</h3>
-
-            <table class="table" id="trainSch">
-                <thead>
-                    <tr>
-                        <th scope="Train Name">Train name</th>
-                        <th scope="Destination">Destination</th>
-                        <th scope="Frecuency (in min)">Frecuency</th>
-                        <th scope="Next Arrival">Next Arrival</th>
-                        <th scope="Minutes Away">Minutes Away</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>La Zarzuela</td>
-                        <td>Seville</td>
-                        <td>60</td>
-                        <td>08:00 AM</td>
-                        <td>50</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="schedule">
+        <!--TREN SCHEDULE-->
+        <div class="container main">
             <div>
-                <h3 class="schTitle">Add Train</h3>
+                <iframe src="http://free.timeanddate.com/clock/i65rtgcv/n197/fn2/fcfff/tcd04548/ftb/bas4/bac34495e/pa14/ts1/ta1" frameborder="0"
+                    width="188" height="55"></iframe>
+
+
             </div>
-            <form class="form-group">
-                <div class="form-group">
-                    <label for="trainName">Train Name</label>
-                    <input type="text" class="form-control" id="trainName" placeholder="Train Name">
-                </div>
-                <div class="form-group">
-                    <label for="destination">Destination</label>
-                    <select class="custom-select" id="destination">
-                        <option selected>Destination...</option>
-                        <option value="alacant">Alacant</option>
-                        <option value="barcelona">Barcelona</option>
-                        <option value="bordeaux">Bordeaux</option>
-                        <option value="cordoba">Cordoba</option>
-                        <option value="granada">Granada</option>
-                        <option value="toledo">Toledo</option>
-                        <option value="lisbon">Lisbon</option>
-                        <option value="malaga">Malaga</option>
-                        <option value="pamplona">Pamplona</option>
-                        <option value="paris">Paris</option>
-                        <option value="seville">Seville</option>
-                        <option value="valencia">Valencia</option>
+            <div class="schedule">
+                <div>
+                    <h3 class="schTitle">Current Train Schedule</h3>
 
-                    </select>
                 </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="Train Name">Train name</th>
+                            <th scope="Destination">Destination</th>
+                            <th scope="Frecuency (in min)">Frecuency</th>
+                            <th scope="Next Arrival">Next Arrival</th>
+                            <th scope="Minutes Away">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trainSch">
 
-                <div class="form-group">
-                    <label for="firstArrival">First Arrival (Military Time i.e 0600 for 6:00AM)</label>
-                    <div class="row">
-                        <div class="col-md-auto">
-                            <input type="time" class="form-control" id="firstArr" placeholder="12:00">
+                    </tbody>
+                </table>
+            </div>
+            <!--Add New Train-->
+            <div class="schedule">
+                <div>
+                    <h3 class="schTitle">Add Train</h3>
+                </div>
+                <form class="form-group" id="newTrainF">
+                    <div class="form-group">
+                        <label for="trainName">Train Name</label>
+                        <input type="text" class="form-control" id="trainName" placeholder="Train Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <select class="custom-select" id="destination">
+                            <option selected>Destination...</option>
+                            <option value="alacant">Alacant</option>
+                            <option value="barcelona">Barcelona</option>
+                            <option value="bordeaux">Bordeaux</option>
+                            <option value="cordoba">Cordoba</option>
+                            <option value="granada">Granada</option>
+                            <option value="toledo">Toledo</option>
+                            <option value="lisbon">Lisbon</option>
+                            <option value="malaga">Malaga</option>
+                            <option value="pamplona">Pamplona</option>
+                            <option value="paris">Paris</option>
+                            <option value="seville">Seville</option>
+                            <option value="valencia">Valencia</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstArrival">First Arrival (Military Time i.e 0600 for 6:00AM)</label>
+                        <div class="row">
+                            <div class="col-md-auto">
+                                <input type="time" class="form-control" id="firstArr" placeholder="12:00">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="frecuency">Frecuency (in min) </label>
-                    <input type="number" class="form-control" id="frequency" placeholder="Frequency">
-                </div>
-                <button type="submit" class="btn btn-primary" id="addTrain">Submit</button>
+                    <div class="form-group">
+                        <label for="frecuency">Frecuency (in min) </label>
+                        <input type="number" class="form-control" id="frequency" placeholder="Frequency">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="addTrain">Add Train</button>
 
-            </form>
+                </form>
+            </div>
+
         </div>
 
-    </div>
-
-    <script src="assets/javascript/main.js"></script>
+        <script src="assets/javascript/main.js"></script>
 
 
 
-    <!-- Link to Moment.js -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <!-- Link to Moment.js -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </body>
 
 </html>

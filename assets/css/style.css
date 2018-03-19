@@ -84,3 +84,7 @@ label{
    align-self: center;
 
 }
+
+th, td{
+    text-align: center;
+}
