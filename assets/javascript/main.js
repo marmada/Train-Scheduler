@@ -12,7 +12,7 @@ var database = firebase.database();
 // Grab values from input form - add new trains //
 
 var trainName = "";
-var frecuency = 0;
+var frequency = 0;
 var destination = "";
 var timeA = "";
 var nextTrain = "";
@@ -24,7 +24,7 @@ $("#addTrain").on("click", function (event) {
 
   trainName = $("#trainName").val().trim();
   destination = $("#destination").val().trim();
-  frequency = $("#frecuency").val().trim();
+  frequency = $("#frequency").val().trim();
   timeA = $("#firstArr").val().trim();
 
   console.log(trainName);
@@ -61,12 +61,10 @@ $("#addTrain").on("click", function (event) {
   var newTrain = {
     train: trainName,
     destination: destination,
-    frecuency: frecuency,
+    frequency: frequency,
     nextTrain: nextTrain.toLocaleString(),
     minA: tMinutesTillTrain,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
-
-
 
   };
 
@@ -77,26 +75,28 @@ $("#addTrain").on("click", function (event) {
 
   database.ref().orderByChild("dateAdded").limitToLast(15).on("child_added", function(snapshot) {
       // storing the snapshot.val() in a variable for convenience
-      var sv = snapshot.val();
+      var sv = snapshot.newTrain.val();
 
       // Console.loging the last user's data
-      console.log(sv.name);
-      console.log(sv.email);
-      console.log(sv.age);
-      console.log(sv.comment);
+      console.log(sv.train);
+      console.log(sv.destination);
+      console.log(sv.frequency);
+      console.log(moment(sv.nextTrain).format("hh:mm"));
+      console.log(sv.tMinutesTillTrain);
 
-      // Change the HTML to reflect
-      $("#name-display").text(sv.name);
-      $("#email-display").text(sv.email);
-      $("#age-display").text(sv.age);
-      $("#comment-display").text(sv.comment);
+      $("#trainSch").append("<tr><td>" + sv.train + 
+	      	"</td><td>" + sv.destination + 
+	      	"</td><td>" + sv.frequency + 
+          "</td><td>" + moment(sv.nextTrain).format("hh:mm") + 	
+          "</td><td>" + sv.tMinutesTillTrain +("</td></tr>")
+		); 
+
+  
 
       // Handle the errors
     }, function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
     });
-
-
 
 
 });
