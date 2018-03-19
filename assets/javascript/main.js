@@ -7,6 +7,7 @@ var config = {
   messagingSenderId: "394800406940"
 };
 firebase.initializeApp(config);
+var database = firebase.database();
 
 // Grab values from input form - add new trains //
 
@@ -14,7 +15,8 @@ var trainName = "";
 var frecuency = 0;
 var destination = "";
 var timeA = "";
-var nextTrainA = "";
+var nextTrain = "";
+
 
 $("#addTrain").on("click", function (event) {
 
@@ -37,11 +39,11 @@ $("#addTrain").on("click", function (event) {
 
   // Current Time
   var currentTime = moment();
-  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+  console.log(moment(currentTime).format("hh:mm"));
 
   // Difference between the times
   var diffTime = moment().diff(moment(firtArrConv), "minutes");
-  console.log("DIFFERENCE IN TIME: " + diffTime);
+  console.log(diffTime);
 
   // Time apart (remainder)
   var tRemainder = diffTime % frequency;
@@ -49,21 +51,52 @@ $("#addTrain").on("click", function (event) {
 
   // Minute Until Train
   var tMinutesTillTrain = frequency - tRemainder;
-  console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+  console.log(tMinutesTillTrain);
 
   // Next Train
-  var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-  console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+  nextTrain = moment().add(tMinutesTillTrain, "minutes");
+  console.log(moment(nextTrain).format("hh:mm"));
+
 
   var newTrain = {
     train: trainName,
-    frecuency: frecuency,
     destination: destination,
-    time: timeA,
-    minA: tMinutesTillTrain
+    frecuency: frecuency,
+    nextTrain: nextTrain.toLocaleString(),
+    minA: tMinutesTillTrain,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+
+
+
   };
 
   console.log(newTrain);
+
+
+  database.ref().push(newTrain);
+
+  database.ref().orderByChild("dateAdded").limitToLast(15).on("child_added", function(snapshot) {
+      // storing the snapshot.val() in a variable for convenience
+      var sv = snapshot.val();
+
+      // Console.loging the last user's data
+      console.log(sv.name);
+      console.log(sv.email);
+      console.log(sv.age);
+      console.log(sv.comment);
+
+      // Change the HTML to reflect
+      $("#name-display").text(sv.name);
+      $("#email-display").text(sv.email);
+      $("#age-display").text(sv.age);
+      $("#comment-display").text(sv.comment);
+
+      // Handle the errors
+    }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
+
 
 
 });
