@@ -21,6 +21,8 @@
     <!--BOOTSTRAP JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <!--JS FILE-->
     <script src="assets/javascript/main.js"></script>
 
@@ -45,7 +47,7 @@
         <div class="schedule">
             <h3 class="schTitle">Current Train Schedule</h3>
 
-            <table class="table">
+            <table class="table" id="trainSch">
                 <thead>
                     <tr>
                         <th scope="Train Name">Train name</th>
@@ -71,33 +73,43 @@
             <div>
                 <h3 class="schTitle">Add Train</h3>
             </div>
-            <form>
+            <form class="form-group">
                 <div class="form-group">
-                    <label for="trainName">Train name</label>
+                    <label for="trainName">Train Name</label>
                     <input type="text" class="form-control" id="trainName" placeholder="Train Name">
                 </div>
                 <div class="form-group">
                     <label for="destination">Destination</label>
-                    <input type="text" class="form-control" id="destination" placeholder="Destination">
+                    <select class="custom-select" id="destination">
+                        <option selected>Destination...</option>
+                        <option value="alacant">Alacant</option>
+                        <option value="barcelona">Barcelona</option>
+                        <option value="bordeaux">Bordeaux</option>
+                        <option value="cordoba">Cordoba</option>
+                        <option value="granada">Granada</option>
+                        <option value="toledo">Toledo</option>
+                        <option value="lisbon">Lisbon</option>
+                        <option value="malaga">Malaga</option>
+                        <option value="pamplona">Pamplona</option>
+                        <option value="paris">Paris</option>
+                        <option value="seville">Seville</option>
+                        <option value="valencia">Valencia</option>
+
+                    </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="firstArrival">First Arrival (Military Time)</label>
+                    <label for="firstArrival">First Arrival (Military Time  i.e 0600 for 6:00AM)</label>
                     <div class="row">
                         <div class="col-md-auto">
-                            <input type="number" class="form-control" id="firstArrHH" placeholder="12" min=0 max=12> </div>
-
-                        <div class="col-md-auto">
-                            <span> : </span>
-                        </div>
-                        <div class="col-md-auto">
-                            <input type="number" class="form-control " id="firstArrMM" placeholder="00" min=00 max=59>
-                        </div>
+                            <input type="time" class="form-control" id="firstArr" placeholder="12:00"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="frecuency">Frecuency (in min) </label>
                     <input type="number" class="form-control" id="frecuency" placeholder="Frecuency">
                 </div>
+                <button type="submit" class="btn btn-primary" id="addTrain">Submit</button>
 
             </form>
         </div>
