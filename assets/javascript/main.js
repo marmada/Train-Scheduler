@@ -154,12 +154,13 @@ $(document).ready(function () {
     nextTrain = moment().add(tMinutesTillTrain, "minutes");
     console.log(moment(nextTrain).format("hh:mm"));
 
+    var train = sv.train.toUpperCase();
+    var dest = sv.destination.toUpperCase();
 
 
 
-
-    $("#trainSch").append("<tr><td>" + sv.train.toUpperCase() +
-      "</td><td>" + sv.destination.toUpperCase() +
+    $("#trainSch").append("<tr><td>" + train +
+      "</td><td>" + dest +
       "</td><td>" + sv.frequency +
       "</td><td>" + moment(nextTrain).format("hh:mm A") +
       "</td><td>" + tMinutesTillTrain + ("</td></tr>")
